@@ -1,6 +1,6 @@
 # covid19_cases_ua
 
-### files/
+### files:
 * Apr2021.csv
 * Dec2020.csv
 * Feb2021.csv
