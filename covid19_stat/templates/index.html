@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+{% if data_file %}
+    <img src="{{ url_for('download_file', filename=data_file) }}" width="100%" height="380" alt="{{result_file}}">
+
+
+    <h2>Файл: {{data_file}}</h2>
+    <div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Новых случаев</th>
+                <th>Выздоровели</th>
+                <th>Госпитализировано</th>
+                <th>Летальных случаев</th>
+                <th>Тестов за сутки</th>
+                <th>Заболело детей</th>
+                <th>Заболело врачей</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in stat_lines %}
+            <tr>
+                <td>{{line[0]}}</td>
+                <td>{{line[1]}}</td>
+                <td>{{line[2]}}</td>
+                <td>{{line[3]}}</td>
+                <td>{{line[4]}}</td>
+                <td>{{line[5]}}</td>
+                <td>{{line[6]}}</td>
+                <td>{{line[7]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% else %}
+  <h2><center>No data (инструкция)</center></h2>
+{% endif %}
+{% endblock content %}
