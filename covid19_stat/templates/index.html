@@ -5,41 +5,56 @@
 {% block content %}
 
 {% if data_file %}
-    <img src="{{ url_for('download_file', filename=data_file) }}" width="100%" height="380" alt="{{result_file}}">
+<img src="{{ url_for('download_file', filename=data_file) }}" width="100%" height="380" alt="{{result_file}}">
 
 
-    <h2>Файл: {{data_file}}</h2>
-    <div class="table-responsive">
-    <table class="table table-striped table-sm">
-        <thead>
-            <tr>
-                <th>Дата</th>
-                <th>Новых случаев</th>
-                <th>Выздоровели</th>
-                <th>Госпитализировано</th>
-                <th>Летальных случаев</th>
-                <th>Тестов за сутки</th>
-                <th>Заболело детей</th>
-                <th>Заболело врачей</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for line in stat_lines %}
-            <tr>
-                <td>{{line[0]}}</td>
-                <td>{{line[1]}}</td>
-                <td>{{line[2]}}</td>
-                <td>{{line[3]}}</td>
-                <td>{{line[4]}}</td>
-                <td>{{line[5]}}</td>
-                <td>{{line[6]}}</td>
-                <td>{{line[7]}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    </div>
+<h2>Файл: {{data_file}}</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>Дата</th>
+        <th>Новых случаев</th>
+        <th>Выздоровели</th>
+        <th>Госпитализировано</th>
+        <th>Летальных случаев</th>
+        <th>Тестов за сутки</th>
+        <th>Заболело детей</th>
+        <th>Заболело врачей</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for line in stat_lines %}
+      <tr>
+        <td>{{line[0]}}</td>
+        {% if line[1]|int >= line[2]|int %}
+        <td style="color:red;">{{line[1]}}</td>
+        {% else %}
+        <td>{{line[1]}}</td>
+        {% endif %}
+        <td>{{line[2]}}</td>
+        <td>{{line[3]}}</td>
+        <td>{{line[4]}}</td>
+        <td>{{line[5]}}</td>
+        <td>{{line[6]}}</td>
+        <td>{{line[7]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% else %}
-  <h2><center>No data (инструкция)</center></h2>
+<p>Please select a <strong>*.csv</strong> file that meets the criteria:</p>
+<img src="{{ url_for('static', filename='img/csvexample.png') }}" width="90%" height="60%" alt="{{result_file}}">
+<hr />
+<p>Example files:</p>
+{% for file in file_examples %}
+<ol class="list-group">
+  <li class="list-group-item">
+    <a href="{{ url_for('examples', filename=file) }}" class="stretched-link">{{ file }}</a>
+  </li>
+</ol>
+{% endfor %}
+
 {% endif %}
 {% endblock content %}

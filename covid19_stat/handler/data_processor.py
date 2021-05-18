@@ -1,15 +1,11 @@
 import os
 import csv
-import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
 from covid19_stat import app
 
 
 MONTHS = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
 "Июль", "Август", "Сентябрь","Октябрь", "Ноябрь", "Декабрь"]
-PTITLE = {"ciu": "COVID19 в Украине\n", "cy": "2021"}
-PLEGEND = {"nc": "Новых случаев", "gc": "Госпитализировано", "vc": "Выздоровели", "dc": "Умерло"}
 
 def read_csv_data(stat_file_csv):
     
@@ -66,7 +62,7 @@ def data_generator(stat_lines, result_png_file):
         }
 
     plt.savefig(f"{result_png_file}")
-    plt.show()
+    plt.cla()
     
     return generate_info
 
