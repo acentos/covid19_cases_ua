@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+    stat_ua:
+      build: ./covid19
+      privileged: true
+      container_name: stat_ua
+      ports:
+        - 10.8.0.1:8000:8000
+        - 10.8.0.2:8000:8000
