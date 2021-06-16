@@ -67,7 +67,9 @@ def data_generator(stat_lines, result_png_file):
     return generate_info
 
 def data_processor(stat_file):
+
     stat_file_csv = os.path.join(app.config['UPLOAD_FOLDER'], stat_file)
+    print(stat_file_csv)
     result_png_file = os.path.join(
         app.config['DOWNLOAD_FOLDER'],
         os.path.splitext(os.path.basename(stat_file_csv))[0] + ".png")
