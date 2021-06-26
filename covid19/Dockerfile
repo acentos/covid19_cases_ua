@@ -8,6 +8,8 @@ WORKDIR /covid19_stat
 
 COPY . ./
 
+RUN apt update && apt upgrade -y
+
 RUN python -m venv venv
 RUN venv/bin/pip install --upgrade pip
 RUN venv/bin/pip install -r requirements.txt
