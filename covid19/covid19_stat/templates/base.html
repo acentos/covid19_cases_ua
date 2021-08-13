@@ -46,6 +46,17 @@
                             Умерло: {{ data_result['total_deaths'] }}
                         </li>
                     </ul>
+                    <ul>
+                        <li>
+                            {% for file in file_examples %}
+                                <ol class="list-group">
+                                    <li class="list-group-item">
+                                        <strong><a href="{{ url_for('examples', filename=file) }}" class="stretched-link">{{ file }}</a></strong>
+                                    </li>
+                                </ol>
+                                {% endfor %}
+                        </li>
+                    </ul>
                 </div>
                 {% endif %}
             </nav>

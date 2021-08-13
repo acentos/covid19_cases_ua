@@ -8,7 +8,9 @@ WORKDIR /covid19_stat
 
 COPY . ./
 
-RUN apt update && apt upgrade -y
+RUN apt update 
+    && apt upgrade -y \
+    && apt install vim -y
 
 RUN python -m venv venv
 RUN venv/bin/pip install --upgrade pip

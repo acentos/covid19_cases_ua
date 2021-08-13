@@ -49,13 +49,13 @@
 </div>
 {% else %}
 <p>Please select a <strong>*.csv</strong> file that meets the criteria:</p>
-<img src="{{ url_for('static', filename='img/csvexample.png') }}" width="90%" height="60%" alt="{{result_file}}">
+<!-- img src="{{ url_for('static', filename='img/csvexample.png') }}" width="90%" height="60%" alt="{{result_file}}" -->
 <hr />
 <p>Example files:</p>
 {% for file in file_examples %}
 <ol class="list-group">
   <li class="list-group-item">
-    <a href="{{ url_for('examples', filename=file) }}" class="stretched-link">{{ file }}</a>
+    <strong><a href="{{ url_for('examples', filename=file) }}" class="stretched-link">{{ file }}</a></strong>
   </li>
 </ol>
 {% endfor %}
