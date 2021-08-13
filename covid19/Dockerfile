@@ -8,7 +8,7 @@ WORKDIR /covid19_stat
 
 COPY . ./
 
-RUN apt update 
+RUN apt update \
     && apt upgrade -y \
     && apt install vim -y
 
