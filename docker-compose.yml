@@ -10,8 +10,5 @@ services:
           limits:
             cpus: '0.75'
             memory: 196M
-          #reservations:
-          #  cpus: '0.50'
-          #  memory: 128M
       ports:
         - 8000:8000
