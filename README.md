@@ -1,7 +1,7 @@
 ## covid19_cases_ua
 
 ### csv files:
-dec 2020 - sep 2021
+dec 2020 - oct 2021
 
 ### docker:
 ```
