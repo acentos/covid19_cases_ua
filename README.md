@@ -1,21 +1,21 @@
 ## covid19_cases_ua
 
 ## CSV Files (data/examples):
-| data/examples|
-|--------------|
-| Apr2021.csv  |
-| Aug2021.csv  |
-| Dec2020.csv  |
-| Feb2021.csv  |
-| Jan2021.csv  |
-| Jul2021.csv  |
-| Jun2021.csv  |
-| Mar2021.csv  |
-| May2021.csv  |
-| Nov2020.csv  |
-| Nov2021.csv  |
-| Oct2021.csv  |
-| Sep2021.csv  |
+| #  | data/examples|
+|----|-------------:|
+| 1  | Apr2021.csv  |
+| 2  | Aug2021.csv  |
+| 3  | Dec2020.csv  |
+| 4  | Feb2021.csv  |
+| 5  | Jan2021.csv  |
+| 6  | Jul2021.csv  |
+| 7  | Jun2021.csv  |
+| 8  | Mar2021.csv  |
+| 9  | May2021.csv  |
+| 10 | Nov2020.csv  |
+| 11 | Nov2021.csv  |
+| 12 | Oct2021.csv  |
+| 13 | Sep2021.csv  |
 
 ### docker:
 ```
