@@ -1,4 +1,4 @@
-FROM python:3.7.4-buster
+FROM python:buster
 LABEL maintainer="acentos"
 
 ENV CONTNAME='stat_ua'
