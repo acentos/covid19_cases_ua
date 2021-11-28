@@ -48,4 +48,4 @@ def examples(filename):
 
 @app.errorhandler(404)
 def page_not_found(err):
-    return "<center><h2>404</h2></center>"
+    return "<center><h2 style='color:red';>404</h2></center>"
